@@ -2,4 +2,4 @@
 
 Projet - Baptiste Bordenave, Arno Drean, Baptiste Gros
 
-TODO : Refaire le rapport sur ce README 
+Ce projet de Machine Learning consiste à prédire si une page d'un PDF est une page contenant majoritairement du texte ou majoritairement des images
