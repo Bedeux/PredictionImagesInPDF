@@ -27,7 +27,6 @@ def KNN(data,target):
       values.append(i)
       print("Score (KNN): ",round(score,3), " avec ", i ," neighbours")
     print(values,"   ",scores)
-     # Meilleur score avec n_neighbors = 16
 
 def RandomForest(data,target):
     X_train,X_test,y_train,y_test = train_test_split(data,target,test_size=0.3,random_state=0)
@@ -54,9 +53,6 @@ def SVM(data,target):
     y_pr = clf.predict(X_tst)
     print("Accuracy (with rbf): ", round(metrics.accuracy_score(y_tst, y_pr), 3))
 
-# SVM(data,target)
-
-
 def DecisionTree(data,target):
     X_train, X_test, y_train, y_test = train_test_split(data, target, test_size = 0.3, random_state = 42)
 
@@ -76,6 +72,8 @@ def DecisionTree(data,target):
     print(scores)
     print(values)
 
+# KNN(data, target)
+# SVM(data, target)
 # DecisionTree(data,target)
 RandomForest(data,target)
 

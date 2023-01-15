@@ -7,26 +7,15 @@ import csv
 import os
 from skimage import io
 
-
-
-
 def create_pixel_image(imagePath, newDirectory):
-    # Open image
-    # img = Image.open("./Labelisation/Textes/Risques et pollution programme immo Gardenia (1)-0.jpeg")
-    # Resize smoothly down to 16x16 pixels
     img = Image.open(imagePath)
     A4_proportion = 297 / 210
-    n = 25
+    n = 25 # Number of pixel in the larger of the page
     imgSmall = img.resize((n, int(n * A4_proportion)), resample=Image.Resampling.BILINEAR)
-    # Scale back up using NEAREST to original size
-    # result = imgSmall.resize(imgSmall.size, Image.Resampling.NEAREST)
-    # Save
     imageName = imagePath.split('/')[-1]
     newPath = newDirectory + imageName
     imgSmall.save(newPath)
 
-# img = Image.open("./Labelisation/Textes/data_detection_images_1-0.jpeg")
-# create_pixel_image(img)
 def pixelize_images():
     image_names = os.listdir("./Labelisation/Images")
     for image in image_names:
@@ -42,7 +31,6 @@ def pixelize_textes():
 # pixelize_images()
 # pixelize_textes()
 
-# create_pixel_image("./Labelisation/Textes/data_detection_images_1-0.jpeg")
 # Stored all RGB values of main colors in a array
 main_colors = [(128, 0, 0),
                (139, 0, 0),
@@ -188,7 +176,6 @@ main_colors = [(128, 0, 0),
 
 def get_colors(imagePath):
     image = io.imread(imagePath)
-    # image = cv2.imread(imagePath)
     pixels = []
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)  # convert BGR to RGB image
     h, w, bpp = np.shape(image)
@@ -212,28 +199,11 @@ def get_colors(imagePath):
     imageName = imagePath.split('/')[-1]
     return [imageName, ColorNumber, MostFrequentColor, SecondMostFrequentColor]
 
-
-
 image_names = os.listdir("./Labelisation/Textes Pixelisées")
 
 with open('./data_AI.csv', 'a+', newline='') as write_obj:
     for file_name in image_names:
         path = "./Labelisation/Textes Pixelisées/"+file_name
-        # Create a writer object from csv module
         csv_writer = csv.writer(write_obj)
-        # Add contents of list as last row in the csv file
         data = get_colors(path)
         csv_writer.writerow(data)
-
-"""
-image_names = os.listdir("./Labelisation/Images Pixelisées")
-with open('./data_AI.csv', 'a+', newline='') as write_obj:
-    for file_name in image_names:
-        path = "./Labelisation/Images Pixelisées/"+file_name
-        print(path)
-        # Create a writer object from csv module
-        csv_writer = csv.writer(write_obj)
-        # Add contents of list as last row in the csv file
-        data = get_colors(path)
-        csv_writer.writerow(data)
-"""
