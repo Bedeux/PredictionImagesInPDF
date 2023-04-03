@@ -1,37 +1,3 @@
-from PIL import Image
-from collections import Counter
-import numpy as np
-import scipy.spatial as sp
-import cv2
-import csv
-import os
-from skimage import io
-
-def create_pixel_image(imagePath, newDirectory):
-    img = Image.open(imagePath)
-    A4_proportion = 297 / 210
-    n = 25 # Number of pixel in the larger of the page
-    imgSmall = img.resize((n, int(n * A4_proportion)), resample=Image.Resampling.BILINEAR)
-    imageName = imagePath.split('/')[-1]
-    newPath = newDirectory + imageName
-    imgSmall.save(newPath)
-
-def pixelize_images():
-    image_names = os.listdir("./Labelisation/Images")
-    for image in image_names:
-        path = './Labelisation/Images/'+image
-        create_pixel_image(path,"./Labelisation/Images Pixelisées/")
-
-def pixelize_textes():
-    image_names = os.listdir("./Labelisation/Textes")
-    for image in image_names:
-        path = './Labelisation/Textes/'+image
-        create_pixel_image(path,"./Labelisation/Textes Pixelisées/")
-
-# pixelize_images()
-# pixelize_textes()
-
-# Stored all RGB values of main colors in a array
 main_colors = [(128, 0, 0),
                (139, 0, 0),
                (165, 42, 42),
@@ -161,7 +127,7 @@ main_colors = [(128, 0, 0),
                (240, 255, 240),
                (255, 255, 240),
                (240, 255, 255),
-               (255, 250, 250),
+               (255, 250, 250), 
                (0, 0, 0),
                (105, 105, 105),
                (128, 128, 128),
@@ -174,36 +140,61 @@ main_colors = [(128, 0, 0),
                ]
 
 
-def get_colors(imagePath):
-    image = io.imread(imagePath)
-    pixels = []
-    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)  # convert BGR to RGB image
-    h, w, bpp = np.shape(image)
-    for py in range(0, h):
-        for px in range(0, w):
-            # Find the nearest color
-            input_color = (image[py][px][0], image[py][px][1], image[py][px][2])
-            tree = sp.KDTree(main_colors)
-            ditsance, result = tree.query(input_color)
-            nearest_color = main_colors[result]
+import ast
 
-            if nearest_color[0] != nearest_color[1] or nearest_color[1] != nearest_color[2] or nearest_color[0] != \
-                    nearest_color[2]:
-                pixels.append((nearest_color[0], nearest_color[1], nearest_color[2]))
+value =  ast.literal_eval("(128, 128, 128)")
+if value in main_colors:
+    index = main_colors.index(value)
+else :
+    index = 1000
 
-    all_pixels = Counter(pixels)
-    ColorNumber = len(all_pixels)
-    MostFrequentColor = max(all_pixels, key=all_pixels.get)
-    SecondMostFrequentColor = sorted(all_pixels, key=all_pixels.get)[-2]
+print(index)
 
-    imageName = imagePath.split('/')[-1]
-    return [imageName, ColorNumber, MostFrequentColor, SecondMostFrequentColor]
+import csv
 
-image_names = os.listdir("./Labelisation/Textes Pixelisées")
+# Open the CSV file for reading
+with open('data_AI_withtou_first_line.csv', 'r') as input_file:
 
-with open('./data_AI.csv', 'a+', newline='') as write_obj:
-    for file_name in image_names:
-        path = "./Labelisation/Textes Pixelisées/"+file_name
-        csv_writer = csv.writer(write_obj)
-        data = get_colors(path)
-        csv_writer.writerow(data)
+    # Create a CSV reader object
+    reader = csv.reader(input_file)
+
+    # Create a list to hold the updated rows
+    updated_rows = []
+
+    # Loop through each row in the CSV file
+    n=0
+    for row in reader:
+        # Multiply the variable in the 5th column by 2 and update the row
+        value = row[2]
+        if value is not None:
+            value = ast.literal_eval(row[2])
+
+        if value is not None and value in main_colors:
+            index = main_colors.index(value)
+        else:
+            index = 1000
+
+        row[2] = index
+
+
+        value = row[3]
+        if value is not None:
+            value = ast.literal_eval(row[3])
+
+        if value is not None and value in main_colors:
+            index = main_colors.index(value)
+        else:
+            index = 1000
+
+        row[3] = index
+        # Append the updated row to the list of updated rows
+        updated_rows.append(row)
+
+# Open the CSV file for writing
+with open('data_AI_RGB_colors_RESULTS.csv', 'w', newline='') as output_file:
+
+    # Create a CSV writer object
+    writer = csv.writer(output_file)
+
+    # Write the updated rows to the CSV file
+    writer.writerows(updated_rows)
