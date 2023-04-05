@@ -11,7 +11,6 @@ from skimage import io
 from pytesseract import pytesseract
 import time
 
-
 path_to_project = "/home/bbordenave/personalProjects/PredictionImagesInPDF"
 
 files = os.listdir(path_to_project+"/1. Data/temp PDF")
@@ -38,7 +37,7 @@ def create_images(image, file):
             new_filename = path_to_project+'/1. Data/temp images/' + filename + '-' + str(i) + '.jpeg'
         else:
             new_filename = path_to_project+'/1. Data/temp images/' + filename + '.jpeg'
-        image[i].save(new_filename, 'JPEG') # 75% of quality to increase speed of execution
+        image[i].save(new_filename, 'JPEG') 
 
 def create_all_images():
     """Creates images in the directory images from the PDFs"""
@@ -225,7 +224,19 @@ def get_colors(imagePath):
     SecondMostFrequentColor = sorted(all_pixels, key=all_pixels.get)[-2]
 
     imageName = imagePath.split('/')[-1]
-    return [imageName, ColorNumber, MostFrequentColor, SecondMostFrequentColor]
+
+    dico_couleur_1 = {}
+    dico_couleur_2 = {}
+    for couleur in main_colors:
+        dico_couleur_1[couleur] = 0
+        dico_couleur_2[couleur] = 0
+    
+    dico_couleur_1[MostFrequentColor] = 1
+    dico_couleur_2[SecondMostFrequentColor] = 1
+
+
+    my_list = list(dico_couleur_1.values()) + list(dico_couleur_2.values()) 
+    return [imageName, ColorNumber] + my_list
     
 def create_dictionnary_of_proportion(files_of_image,dico_area_image,dico_area):
     dico_proportion = {}
@@ -292,9 +303,17 @@ for file_name in pixelated_image_names:
 all_image = os.listdir(path_to_project+'/1. Data/temp images')
 dico = create_characters_values(all_image)
 
-for image in datas:
-    if(image in dico):
-        datas[image].extend(dico[image])
+
+# Columns in the right order
+for image in dico:
+    if(image in datas):
+        number_colors = datas[image][0]
+        datas[image].pop(0)
+        dico[image].insert(0,number_colors)
+        dico[image].extend(datas[image])
+
+
+
 
 end_time = time.monotonic()
 print("Création des variables: {:.2f} seconds".format(round(end_time - start_time, 2)))
@@ -302,6 +321,6 @@ print("Création des variables: {:.2f} seconds".format(round(end_time - start_ti
 
 print("\n\n")
 
-print(datas)
+print(dico)
 
 delete_temp_files()

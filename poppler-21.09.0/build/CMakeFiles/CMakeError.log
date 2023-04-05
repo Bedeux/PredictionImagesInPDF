@@ -1,0 +1,163 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_336f2/fast && /usr/bin/make -f CMakeFiles/cmTC_336f2.dir/build.make CMakeFiles/cmTC_336f2.dir/build
+make[1]: Entering directory '/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_336f2.dir/src.c.o
+/usr/bin/cc   -std=c99 -D_DEFAULT_SOURCE -DCMAKE_HAVE_LIBC_PTHREAD -O2 -DNDEBUG    -o CMakeFiles/cmTC_336f2.dir/src.c.o   -c /home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_336f2
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_336f2.dir/link.txt --verbose=1
+/usr/bin/cc -std=c99 -D_DEFAULT_SOURCE -DCMAKE_HAVE_LIBC_PTHREAD -O2 -DNDEBUG    -Wl,--as-needed  CMakeFiles/cmTC_336f2.dir/src.c.o  -o cmTC_336f2 
+/usr/bin/ld: CMakeFiles/cmTC_336f2.dir/src.c.o: in function `main':
+src.c:(.text.startup+0x29): undefined reference to `pthread_create'
+/usr/bin/ld: src.c:(.text.startup+0x32): undefined reference to `pthread_detach'
+/usr/bin/ld: src.c:(.text.startup+0x3d): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_336f2.dir/build.make:87: cmTC_336f2] Error 1
+make[1]: Leaving directory '/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_336f2/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Performing C++ SOURCE FILE Test ICONV_SECOND_ARGUMENT_IS_CONST failed with the following output:
+Change Dir: /home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_7281c/fast && /usr/bin/make -f CMakeFiles/cmTC_7281c.dir/build.make CMakeFiles/cmTC_7281c.dir/build
+make[1]: Entering directory '/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_7281c.dir/src.cxx.o
+/usr/bin/c++    -fno-exceptions -fno-check-new -fno-common -fno-operator-names -D_DEFAULT_SOURCE -DICONV_SECOND_ARGUMENT_IS_CONST -O2 -DNDEBUG    -std=c++14 -o CMakeFiles/cmTC_7281c.dir/src.cxx.o -c /home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/build/CMakeFiles/CMakeTmp/src.cxx
+/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/build/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
+/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/build/CMakeFiles/CMakeTmp/src.cxx:9:17: error: invalid conversion from ‘const char**’ to ‘char**’ [-fpermissive]
+    9 |     iconv(conv, &in, &ilen, &out, &olen);
+      |                 ^~~
+      |                 |
+      |                 const char**
+In file included from /home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/build/CMakeFiles/CMakeTmp/src.cxx:2:
+/usr/include/iconv.h:42:54: note:   initializing argument 2 of ‘size_t iconv(iconv_t, char**, size_t*, char**, size_t*)’
+   42 | extern size_t iconv (iconv_t __cd, char **__restrict __inbuf,
+      |                                    ~~~~~~~~~~~~~~~~~~^~~~~~~
+make[1]: *** [CMakeFiles/cmTC_7281c.dir/build.make:66: CMakeFiles/cmTC_7281c.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_7281c/fast] Error 2
+
+
+Source file was:
+
+  #include <iconv.h>
+  int main(){
+    iconv_t conv = 0;
+    const char* in = 0;
+    size_t ilen = 0;
+    char* out = 0;
+    size_t olen = 0;
+    iconv(conv, &in, &ilen, &out, &olen);
+    return 0;
+  }
+
+Determining if the function fseek64 exists failed with the following output:
+Change Dir: /home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_2e089/fast && /usr/bin/make -f CMakeFiles/cmTC_2e089.dir/build.make CMakeFiles/cmTC_2e089.dir/build
+make[1]: Entering directory '/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2e089.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -Wall -std=c99 -D_DEFAULT_SOURCE -DCHECK_FUNCTION_EXISTS=fseek64 -O2 -DNDEBUG    -std=c11 -o CMakeFiles/cmTC_2e089.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_2e089
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2e089.dir/link.txt --verbose=1
+/usr/bin/cc -Wall -std=c99 -D_DEFAULT_SOURCE -DCHECK_FUNCTION_EXISTS=fseek64 -O2 -DNDEBUG    -Wl,--as-needed  CMakeFiles/cmTC_2e089.dir/CheckFunctionExists.c.o  -o cmTC_2e089 
+/usr/bin/ld: CMakeFiles/cmTC_2e089.dir/CheckFunctionExists.c.o: in function `main':
+CheckFunctionExists.c:(.text.startup+0x10): undefined reference to `fseek64'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_2e089.dir/build.make:87: cmTC_2e089] Error 1
+make[1]: Leaving directory '/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_2e089/fast] Error 2
+
+
+
+Determining if the function ftell64 exists failed with the following output:
+Change Dir: /home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_0d351/fast && /usr/bin/make -f CMakeFiles/cmTC_0d351.dir/build.make CMakeFiles/cmTC_0d351.dir/build
+make[1]: Entering directory '/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0d351.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -Wall -std=c99 -D_DEFAULT_SOURCE -DCHECK_FUNCTION_EXISTS=ftell64 -O2 -DNDEBUG    -std=c11 -o CMakeFiles/cmTC_0d351.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_0d351
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0d351.dir/link.txt --verbose=1
+/usr/bin/cc -Wall -std=c99 -D_DEFAULT_SOURCE -DCHECK_FUNCTION_EXISTS=ftell64 -O2 -DNDEBUG    -Wl,--as-needed  CMakeFiles/cmTC_0d351.dir/CheckFunctionExists.c.o  -o cmTC_0d351 
+/usr/bin/ld: CMakeFiles/cmTC_0d351.dir/CheckFunctionExists.c.o: in function `main':
+CheckFunctionExists.c:(.text.startup+0x10): undefined reference to `ftell64'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_0d351.dir/build.make:87: cmTC_0d351] Error 1
+make[1]: Leaving directory '/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_0d351/fast] Error 2
+
+
+
+Performing C SOURCE FILE Test HAVE_NDIR_H failed with the following output:
+Change Dir: /home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_e04c0/fast && /usr/bin/make -f CMakeFiles/cmTC_e04c0.dir/build.make CMakeFiles/cmTC_e04c0.dir/build
+make[1]: Entering directory '/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e04c0.dir/src.c.o
+/usr/bin/cc   -Wall -std=c99 -D_DEFAULT_SOURCE -DHAVE_NDIR_H -O2 -DNDEBUG    -std=c11 -o CMakeFiles/cmTC_e04c0.dir/src.c.o   -c /home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/build/CMakeFiles/CMakeTmp/src.c
+/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/build/CMakeFiles/CMakeTmp/src.c:1:10: fatal error: ndir.h: No such file or directory
+    1 | #include <ndir.h>
+      |          ^~~~~~~~
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_e04c0.dir/build.make:66: CMakeFiles/cmTC_e04c0.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_e04c0/fast] Error 2
+
+
+Source file was:
+#include <ndir.h>
+
+int main(int argc, char *argv[])
+{
+  DIR* d = 0;
+  return 0;
+}
+
+Performing C SOURCE FILE Test HAVE_SYS_NDIR_H failed with the following output:
+Change Dir: /home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_4ea76/fast && /usr/bin/make -f CMakeFiles/cmTC_4ea76.dir/build.make CMakeFiles/cmTC_4ea76.dir/build
+make[1]: Entering directory '/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4ea76.dir/src.c.o
+/usr/bin/cc   -Wall -std=c99 -D_DEFAULT_SOURCE -DHAVE_SYS_NDIR_H -O2 -DNDEBUG    -std=c11 -o CMakeFiles/cmTC_4ea76.dir/src.c.o   -c /home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/build/CMakeFiles/CMakeTmp/src.c
+/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/build/CMakeFiles/CMakeTmp/src.c:1:10: fatal error: sys/ndir.h: No such file or directory
+    1 | #include <sys/ndir.h>
+      |          ^~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_4ea76.dir/build.make:66: CMakeFiles/cmTC_4ea76.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_4ea76/fast] Error 2
+
+
+Source file was:
+#include <sys/ndir.h>
+
+int main(int argc, char *argv[])
+{
+  DIR* d = 0;
+  return 0;
+}
+

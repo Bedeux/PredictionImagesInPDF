@@ -1,0 +1,206 @@
+{
+	"BUILD_DIR" : "/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/build/qt5/demos/poppler_qt5viewer_autogen",
+	"CMAKE_BINARY_DIR" : "/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/build/qt5/demos",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/qt5/demos",
+	"CMAKE_EXECUTABLE" : "/usr/bin/cmake",
+	"CMAKE_SOURCE_DIR" : "/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0",
+	"HEADERS" : 
+	[
+		[
+			"/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/qt5/demos/abstractinfodock.h",
+			"Mu",
+			"EWIEGA46WW/moc_abstractinfodock.cpp"
+		],
+		[
+			"/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/qt5/demos/documentobserver.h",
+			"Mu",
+			"EWIEGA46WW/moc_documentobserver.cpp"
+		],
+		[
+			"/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/qt5/demos/embeddedfiles.h",
+			"Mu",
+			"EWIEGA46WW/moc_embeddedfiles.cpp"
+		],
+		[
+			"/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/qt5/demos/fonts.h",
+			"Mu",
+			"EWIEGA46WW/moc_fonts.cpp"
+		],
+		[
+			"/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/qt5/demos/info.h",
+			"Mu",
+			"EWIEGA46WW/moc_info.cpp"
+		],
+		[
+			"/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/qt5/demos/metadata.h",
+			"Mu",
+			"EWIEGA46WW/moc_metadata.cpp"
+		],
+		[
+			"/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/qt5/demos/navigationtoolbar.h",
+			"Mu",
+			"EWIEGA46WW/moc_navigationtoolbar.cpp"
+		],
+		[
+			"/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/qt5/demos/optcontent.h",
+			"Mu",
+			"EWIEGA46WW/moc_optcontent.cpp"
+		],
+		[
+			"/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/qt5/demos/pageview.h",
+			"Mu",
+			"EWIEGA46WW/moc_pageview.cpp"
+		],
+		[
+			"/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/qt5/demos/permissions.h",
+			"Mu",
+			"EWIEGA46WW/moc_permissions.cpp"
+		],
+		[
+			"/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/qt5/demos/thumbnails.h",
+			"Mu",
+			"EWIEGA46WW/moc_thumbnails.cpp"
+		],
+		[
+			"/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/qt5/demos/toc.h",
+			"Mu",
+			"EWIEGA46WW/moc_toc.cpp"
+		],
+		[
+			"/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/qt5/demos/viewer.h",
+			"Mu",
+			"EWIEGA46WW/moc_viewer.cpp"
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/build/qt5/demos/poppler_qt5viewer_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/build/qt5/demos/poppler_qt5viewer_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"QT_CORE_LIB",
+		"QT_DISABLE_DEPRECATED_BEFORE=0x050900",
+		"QT_GUI_LIB",
+		"QT_NO_DEBUG",
+		"QT_NO_DEPRECATED_WARNINGS",
+		"QT_STRICT_ITERATORS",
+		"QT_WIDGETS_LIB",
+		"QT_XML_LIB"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0",
+		"/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/fofi",
+		"/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/goo",
+		"/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/poppler",
+		"/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/build",
+		"/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/build/poppler",
+		"/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/qt5/demos",
+		"/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/qt5/src",
+		"/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/build/qt5/demos",
+		"/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/build/qt5/src",
+		"/usr/include/freetype2",
+		"/usr/include/openjpeg-2.3",
+		"/usr/include/x86_64-linux-gnu/qt5",
+		"/usr/include/x86_64-linux-gnu/qt5/QtCore",
+		"/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++",
+		"/usr/include/x86_64-linux-gnu/qt5/QtGui",
+		"/usr/include/x86_64-linux-gnu/qt5/QtXml",
+		"/usr/include/x86_64-linux-gnu/qt5/QtWidgets",
+		"/usr/include/x86_64-linux-gnu",
+		"/usr/include",
+		"/usr/include/c++/9",
+		"/usr/include/x86_64-linux-gnu/c++/9",
+		"/usr/include/c++/9/backward",
+		"/usr/lib/gcc/x86_64-linux-gnu/9/include",
+		"/usr/local/include"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : true,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/usr/bin/c++",
+		"-dM",
+		"-E",
+		"-c",
+		"/usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/build/qt5/demos/poppler_qt5viewer_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 4,
+	"PARSE_CACHE_FILE" : "/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/build/qt5/demos/CMakeFiles/poppler_qt5viewer_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/usr/lib/qt5/bin/moc",
+	"QT_UIC_EXECUTABLE" : "",
+	"QT_VERSION_MAJOR" : 5,
+	"SETTINGS_FILE" : "/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/build/qt5/demos/CMakeFiles/poppler_qt5viewer_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/qt5/demos/abstractinfodock.cpp",
+			"Mu"
+		],
+		[
+			"/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/qt5/demos/documentobserver.cpp",
+			"Mu"
+		],
+		[
+			"/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/qt5/demos/embeddedfiles.cpp",
+			"Mu"
+		],
+		[
+			"/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/qt5/demos/fonts.cpp",
+			"Mu"
+		],
+		[
+			"/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/qt5/demos/info.cpp",
+			"Mu"
+		],
+		[
+			"/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/qt5/demos/main_viewer.cpp",
+			"Mu"
+		],
+		[
+			"/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/qt5/demos/metadata.cpp",
+			"Mu"
+		],
+		[
+			"/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/qt5/demos/navigationtoolbar.cpp",
+			"Mu"
+		],
+		[
+			"/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/qt5/demos/optcontent.cpp",
+			"Mu"
+		],
+		[
+			"/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/qt5/demos/pageview.cpp",
+			"Mu"
+		],
+		[
+			"/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/qt5/demos/permissions.cpp",
+			"Mu"
+		],
+		[
+			"/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/qt5/demos/thumbnails.cpp",
+			"Mu"
+		],
+		[
+			"/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/qt5/demos/toc.cpp",
+			"Mu"
+		],
+		[
+			"/home/bbordenave/personalProjects/PredictionImagesInPDF/poppler-21.09.0/qt5/demos/viewer.cpp",
+			"Mu"
+		]
+	],
+	"VERBOSITY" : 0
+}

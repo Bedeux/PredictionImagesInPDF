@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="60"> <!-- Rafraîchit la page toutes les 60 secondes -->
+    <title>Display Files</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            color: #333;
+            background-color: #f1f1f1;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            padding: 20px;
+            margin: 0 auto;
+            max-width: 1000px;
+        }
+        .box {
+            width: 45%;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+        .box h2 {
+            margin-top: 0;
+            text-align: center;
+        }
+        .preview {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .preview img {
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h2>Images</h2>
+            <div class="preview" id="imagePreview">
+                {% for image_file in image_files %}
+                <!-- Utilisez le chemin relatif pour les fichiers statiques -->
+                <img src="{{ url_for('static', filename='image/' + image_file) }}" alt="{{ image_file }}">
+                {% endfor %}
+            </div>
+        </div>
+        <div class="box">
+            <h2>Text Files</h2>
+            <div class="preview" id="textPreview">
+                {% for text_file in text_files %}
+                <!-- Utilisez le chemin relatif pour les fichiers statiques -->
+                <img src="{{ url_for('static', filename='texte/' + text_file) }}" alt="{{ text_file }}">
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
