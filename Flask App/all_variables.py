@@ -11,8 +11,6 @@ from skimage import io
 from pytesseract import pytesseract
 import time
 
-time.sleep(4)
-
 path_to_project = "/home/bbordenave/personalProjects/PredictionImagesInPDF"
 
 files = os.listdir(path_to_project+"/1. Data/temp PDF")
