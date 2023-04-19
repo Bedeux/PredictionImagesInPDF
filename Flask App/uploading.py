@@ -313,7 +313,6 @@ def create_characters_values(files_of_image):
 
     return dico_images
 
-
 def forward_propagation(X, parametres): 
     activations = {'A0' : X} 
     nbCouche = len(parametres) // 2 
